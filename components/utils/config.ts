@@ -2,7 +2,7 @@
 export const CONFIG = {
     // --- Modos Globais ---
     mode: {
-        maintenance: true, // true: Bloqueia o site inteiro e mostra tela de aviso
+        maintenance: false, // true: Bloqueia o site inteiro e mostra tela de aviso
         dev: false, // Útil para logs de debug futuros
     },
 
@@ -16,9 +16,9 @@ export const CONFIG = {
 
     // --- Marketing e Growth ---
     marketing: {
-        showExitIntent: true,    // true: Mostra popup ao tentar sair (se implementado)
+        showExitIntent: false,    // true: Mostra popup ao tentar sair (se implementado)
         showSocialAlert: true,   // true: Mostra card "Siga-nos no Instagram"
-        showCookieBanner: true,  // true: Mostra aviso de LGPD
+        showCookieBanner: false,  // true: Mostra aviso de LGPD
     },
 
     // --- Visual e Performance ---
@@ -38,7 +38,7 @@ export const CONFIG = {
     pages: {
         home: {
             showStats: true,        // Seção de contadores (Projetos entregues, etc)
-            showTeamCarousel: true, // Carrossel de fotos da equipe/obras
+            showTeamCarousel: false, // Carrossel de fotos da equipe/obras
         },
         team: {
             showCareers: true,      // Seção "Trabalhe Conosco"
