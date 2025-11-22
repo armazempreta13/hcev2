@@ -28,6 +28,9 @@ export const IMAGES = {
         
         /** Ícone de Carregamento (Loader) - Versão simplificada ou símbolo */
         loaderSymbol: 'https://i.imgur.com/vSSLyD5.png',
+        
+        /** Imagem "A Arte da Precisão" - Seção hero/destaque */
+        arteDaPrecisao: 'https://i.imgur.com/ArteDP01.jpeg',
     },
 
     // ========================================================================
