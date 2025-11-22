@@ -17,7 +17,7 @@ const ImageWithLoader: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({
 
   return (
     // A simple relative wrapper allows us to position the shimmer
-    <div className="relative">
+    <div className="relative w-full h-full">
       {isLoading && (
         <div
           className={`shimmer-placeholder absolute inset-0 ${className || ''}`}
