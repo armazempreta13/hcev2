@@ -43,10 +43,10 @@ export const IMAGES = {
         
         servicesPreview: {
             /** Imagens dos cards de serviços na Home */
-            esquadrias: 'https://i.imgur.com/YgT81p4l.jpeg',
-            brises: 'https://i.imgur.com/AQsR2Jml.jpeg',
-            guardaCorpo: 'https://i.imgur.com/pZqTVmGl.jpeg',
-            peleVidro: 'https://i.imgur.com/kSj9d2vl.jpeg',
+            esquadrias: 'https://i.imgur.com/YgT81p4.jpeg',
+            brises: 'https://i.imgur.com/AQsR2Jm.jpeg',
+            guardaCorpo: 'https://i.imgur.com/pZqTVmG.jpeg',
+            peleVidro: 'https://i.imgur.com/kSj9d2v.jpeg',
         },
 
         cta: {
@@ -81,10 +81,10 @@ export const IMAGES = {
     services: {
         details: {
             /** Imagens grandes detalhando cada serviço */
-            esquadrias: 'https://i.imgur.com/vSSLyD5l.png',
-            brises: 'https://i.imgur.com/phVat4Zl.jpeg',
-            guardaCorpo: 'https://i.imgur.com/Mw9Sn5Yl.jpeg',
-            peleVidro: 'https://i.imgur.com/wbcNs8Wl.jpeg',
+            esquadrias: 'https://i.imgur.com/uDRif7Q.jpeg',
+            brises: 'https://i.imgur.com/f048dG5.jpeg',
+            guardaCorpo: 'https://i.imgur.com/Xp9pynV.jpeg',
+            peleVidro: 'https://i.imgur.com/kSj9d2v.jpeg',
         },
         types: {
             /** Ícones/Ilustrações dos tipos de abertura (Correr, Maxim-ar, etc) */
@@ -101,10 +101,10 @@ export const IMAGES = {
     // 4. PÁGINA DE SOBRE (QUEM SOMOS)
     // ========================================================================
     about: {
-        hero: 'https://i.imgur.com/8aAdTKyl.jpeg', // Banner principal com a equipe
-        showroom: 'https://i.imgur.com/gGNqV8dl.jpeg', // Foto do showroom/escritório
+        hero: 'https://i.imgur.com/uDRif7Q.jpeg', // Banner principal com a equipe
+        showroom: 'https://i.imgur.com/O1x9h66.jpeg', // Foto do showroom/escritório
         cta: {
-            background: 'https://i.imgur.com/1qlbJxt.jpeg',
+            background: 'https://i.imgur.com/f048dG5.jpeg',
         }
     },
 
@@ -113,43 +113,43 @@ export const IMAGES = {
     // ========================================================================
     portfolio: {
         project1: {
-            main: 'https://i.imgur.com/uDRif7Ql.jpeg',
-            gallery: ['https://i.imgur.com/uDRif7Ql.jpeg', 'https://i.imgur.com/N7fDb4al.jpeg', 'https://i.imgur.com/YgT81p4l.jpeg']
+            main: 'https://i.imgur.com/uDRif7Q.jpeg',
+            gallery: ['https://i.imgur.com/uDRif7Q.jpeg', 'https://i.imgur.com/N7fDb4a.jpeg', 'https://i.imgur.com/YgT81p4.jpeg']
         },
         project2: {
-            main: 'https://i.imgur.com/Xp9pynVl.jpeg',
-            gallery: ['https://i.imgur.com/Xp9pynVl.jpeg', 'https://i.imgur.com/kSj9d2vl.jpeg']
+            main: 'https://i.imgur.com/Xp9pynV.jpeg',
+            gallery: ['https://i.imgur.com/Xp9pynV.jpeg', 'https://i.imgur.com/kSj9d2v.jpeg']
         },
         project3: {
-            main: 'https://i.imgur.com/JUvwwe3l.jpg',
+            main: 'https://i.imgur.com/JUvwwe3.jpg',
             gallery: ['https://i.imgur.com/JUvwwe3.mp4'] // Vídeo
         },
         project4: {
-            main: 'https://i.imgur.com/f048dG5l.jpeg',
-            gallery: ['https://i.imgur.com/f048dG5l.jpeg', 'https://i.imgur.com/Bf4mRmsl.jpeg', 'https://i.imgur.com/HSc3VmK.mp4']
+            main: 'https://i.imgur.com/f048dG5.jpeg',
+            gallery: ['https://i.imgur.com/f048dG5.jpeg', 'https://i.imgur.com/Bf4mRms.jpeg', 'https://i.imgur.com/HSc3VmK.mp4']
         },
         project5: {
-            main: 'https://i.imgur.com/gGNqV8dl.jpeg',
-            gallery: ['https://i.imgur.com/gGNqV8dl.jpeg', 'https://i.imgur.com/3Zf9v7Al.jpeg']
+            main: 'https://i.imgur.com/gGNqV8d.jpeg',
+            gallery: ['https://i.imgur.com/gGNqV8d.jpeg', 'https://i.imgur.com/3Zf9v7A.jpeg']
         },
         project6: {
-            main: 'https://i.imgur.com/O1x9h66l.jpeg',
-            gallery: ['https://i.imgur.com/O1x9h66l.jpeg', 'https://i.imgur.com/pZqTVmGl.jpeg']
+            main: 'https://i.imgur.com/O1x9h66.jpeg',
+            gallery: ['https://i.imgur.com/O1x9h66.jpeg', 'https://i.imgur.com/pZqTVmG.jpeg']
         },
         project7: {
-            main: 'https://i.imgur.com/N7fDb4al.jpeg',
-            gallery: ['https://i.imgur.com/N7fDb4al.jpeg', 'https://i.imgur.com/YgT81p4l.jpeg']
+            main: 'https://i.imgur.com/N7fDb4a.jpeg',
+            gallery: ['https://i.imgur.com/N7fDb4a.jpeg', 'https://i.imgur.com/YgT81p4.jpeg']
         },
         project8: {
-            main: 'https://i.imgur.com/3Zf9v7Al.jpeg',
-            gallery: ['https://i.imgur.com/3Zf9v7Al.jpeg', 'https://i.imgur.com/gGNqV8dl.jpeg', 'https://i.imgur.com/uDRif7Ql.jpeg']
+            main: 'https://i.imgur.com/3Zf9v7A.jpeg',
+            gallery: ['https://i.imgur.com/3Zf9v7A.jpeg', 'https://i.imgur.com/gGNqV8d.jpeg', 'https://i.imgur.com/uDRif7Q.jpeg']
         },
         project9: {
-            main: 'https://i.imgur.com/ew22VEFl.jpg',
-            gallery: ['https://i.imgur.com/ew22VEF.mp4', 'https://i.imgur.com/AQsR2Jml.jpeg']
+            main: 'https://i.imgur.com/ew22VEF.jpg',
+            gallery: ['https://i.imgur.com/ew22VEF.mp4', 'https://i.imgur.com/AQsR2Jm.jpeg']
         },
         cta: {
-            background: 'https://i.imgur.com/1qlbJxt.jpeg' // Reuso da imagem de Sobre
+            background: 'https://i.imgur.com/f048dG5.jpeg' // Reuso da imagem de Sobre
         }
     },
 
@@ -157,18 +157,18 @@ export const IMAGES = {
     // 6. EQUIPE
     // ========================================================================
     team: {
-        hercules: 'https://i.imgur.com/q8qrp0zm.png',
-        cleide: 'https://i.imgur.com/vpMKntAm.png',
-        jose: 'https://i.imgur.com/j42e8Jt.jpeg',
-        leandro: 'https://i.imgur.com/HxKNKwht.jpeg',
-        philippe: 'https://i.imgur.com/TNMBi27t.jpeg',
-        guilherme: 'https://i.imgur.com/uGFGBTY.jpeg',
-        marcelo: 'https://i.imgur.com/A7DlGJB.jpeg',
-        func6: 'https://i.imgur.com/5XZSYm1.jpeg',
-        func7: 'https://i.imgur.com/vHq4Q8Ct.jpeg',
-        func8: 'https://i.imgur.com/Oy9Xq2jt.jpeg',
+        hercules: 'https://i.imgur.com/uDRif7Q.jpeg',
+        cleide: 'https://i.imgur.com/f048dG5.jpeg',
+        jose: 'https://i.imgur.com/Xp9pynV.jpeg',
+        leandro: 'https://i.imgur.com/N7fDb4a.jpeg',
+        philippe: 'https://i.imgur.com/YgT81p4.jpeg',
+        guilherme: 'https://i.imgur.com/Bf4mRms.jpeg',
+        marcelo: 'https://i.imgur.com/O1x9h66.jpeg',
+        func6: 'https://i.imgur.com/3Zf9v7A.jpeg',
+        func7: 'https://i.imgur.com/gGNqV8d.jpeg',
+        func8: 'https://i.imgur.com/kSj9d2v.jpeg',
         cta: {
-            background: 'https://i.imgur.com/0rQ5ev1.jpeg' // Reuso da imagem de Serviços
+            background: 'https://i.imgur.com/f048dG5.jpeg' // Reuso da imagem de Serviços
         }
     },
 
