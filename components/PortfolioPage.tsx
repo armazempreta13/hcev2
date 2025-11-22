@@ -249,7 +249,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, sizeClass, 
         }}
         aria-label={`Ver detalhes do projeto ${project.title}`}
     >
-        <div className="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full w-full">
+        <div className="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-[280px] md:h-[320px] w-full">
             <ImageWithLoader
                 src={project.image}
                 alt={project.title}
@@ -600,7 +600,7 @@ const PortfolioPage: React.FC = () => {
                 {/* Projects Grid */}
                 <div
                     key={activeFilter}
-                    className="grid grid-cols-2 md:grid-cols-4 auto-rows-[280px] gap-4 md:gap-8"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 auto-rows-max"
                 >
                     {filteredProjects.map((project, index) => {
                         const sizeClass =
