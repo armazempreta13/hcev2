@@ -249,13 +249,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, sizeClass, 
         }}
         aria-label={`Ver detalhes do projeto ${project.title}`}
     >
-        <div className="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full">
+        <div className="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full w-full">
             <ImageWithLoader
                 src={project.image}
                 alt={project.title}
                 width={project.imageWidth}
                 height={project.imageHeight}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 fetchPriority={fetchPriority}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">

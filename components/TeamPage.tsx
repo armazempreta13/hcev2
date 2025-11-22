@@ -197,11 +197,11 @@ const TeamPage: React.FC = () => {
                             style={{ transitionDelay: `${index * 150}ms` }}
                         >
                             {/* Imagem Formato Squircle */}
-                            <div className="w-48 h-48 sm:w-56 sm:h-56 mb-6">
+                            <div className="w-48 h-48 sm:w-56 sm:h-56 mb-6 flex-shrink-0 overflow-hidden">
                                 <ImageWithLoader 
                                     src={member.image} 
                                     alt={member.name} 
-                                    className="w-full h-full object-cover rounded-[2.5rem] shadow-md" 
+                                    className="w-full h-full object-cover object-center rounded-[2.5rem] shadow-md" 
                                     fetchPriority="high" 
                                 />
                             </div>

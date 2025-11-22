@@ -105,12 +105,12 @@ const ServicesPage: React.FC = () => {
             <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-24 md:space-y-32">
                 {servicesList.map((service, index) => (
                     <section key={index} id={service.id} ref={addToRefs} className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center scroll-reveal">
-                        <div className={`relative h-96 lg:h-[500px] ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                        <div className={`relative h-96 lg:h-[500px] w-full overflow-hidden ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                             <ImageWithLoader 
                                 src={service.image} 
                                 alt={service.imageAlt} 
                                 width="800" height="600" 
-                                className="w-full h-full object-cover rounded-4xl shadow-2xl"
+                                className="w-full h-full object-cover object-center rounded-4xl shadow-2xl"
                                 fetchPriority={index === 0 ? 'high' : 'auto'}
                             />
                             <div className={`absolute bottom-6 w-48 bg-white/25 backdrop-blur-lg rounded-3xl hidden lg:flex items-center justify-center py-3 px-5 border border-white/30 shadow-xl ${index % 2 === 1 ? 'left-6' : 'right-6'}`}>
@@ -154,11 +154,11 @@ const ServicesPage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {esquadriaTypes.map((type, index) => (
                             <div key={index} ref={addToRefs} className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-reveal" style={{ transitionDelay: `${index * 100}ms` }}>
-                                <div className="relative h-64">
+                                <div className="relative h-64 w-full overflow-hidden">
                                     <ImageWithLoader 
                                         src={type.image} 
                                         alt={type.imageAlt} 
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                                     />
                                 </div>
                                 <div className="p-8">
