@@ -105,12 +105,12 @@ const ServicesPage: React.FC = () => {
             <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-24 md:space-y-32">
                 {servicesList.map((service, index) => (
                     <section key={index} id={service.id} ref={addToRefs} className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center scroll-reveal">
-                        <div className={`relative h-96 lg:h-[500px] w-full overflow-hidden ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                        <div className={`relative h-96 lg:h-[500px] w-full overflow-hidden rounded-4xl shadow-2xl ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                             <ImageWithLoader 
                                 src={service.image} 
                                 alt={service.imageAlt} 
                                 width="800" height="600" 
-                                className="w-full h-full object-cover object-center rounded-4xl shadow-2xl"
+                                className="w-full h-full object-cover object-center"
                                 fetchPriority={index === 0 ? 'high' : 'auto'}
                             />
                             <div className={`absolute bottom-6 w-48 bg-white/25 backdrop-blur-lg rounded-3xl hidden lg:flex items-center justify-center py-3 px-5 border border-white/30 shadow-xl ${index % 2 === 1 ? 'left-6' : 'right-6'}`}>

@@ -63,13 +63,13 @@ const AboutPage = () => {
                                 ))}
                             </div>
                         </div>
-                        <div ref={addToRefs} className="relative h-[400px] lg:h-[500px] w-full overflow-hidden scroll-reveal" style={{transitionDelay: '200ms'}}>
+                        <div ref={addToRefs} className="relative h-[400px] lg:h-[500px] w-full overflow-hidden rounded-3xl shadow-2xl scroll-reveal" style={{transitionDelay: '200ms'}}>
                             <ImageWithLoader
                                 src={IMAGES.about.showroom} 
                                 alt="Showroom moderno da HCE Esquadrias" 
                                 width="600" 
                                 height="750" 
-                                className="w-full h-full object-cover object-center rounded-3xl shadow-2xl"
+                                className="w-full h-full object-cover object-center"
                             />
                             <div className="absolute bottom-8 left-8 w-56 bg-white/25 backdrop-blur-lg rounded-3xl hidden lg:flex items-center justify-center py-4 px-6 border border-white/30 shadow-xl">
                                 <ImageWithLoader

@@ -197,11 +197,11 @@ const TeamPage: React.FC = () => {
                             style={{ transitionDelay: `${index * 150}ms` }}
                         >
                             {/* Imagem Formato Squircle */}
-                            <div className="w-48 h-48 sm:w-56 sm:h-56 mb-6 flex-shrink-0 overflow-hidden">
+                            <div className="w-48 h-48 sm:w-56 sm:h-56 mb-6 flex-shrink-0 overflow-hidden rounded-[2.5rem] shadow-md flex items-center justify-center">
                                 <ImageWithLoader 
                                     src={member.image} 
                                     alt={member.name} 
-                                    className="w-full h-full object-cover object-center rounded-[2.5rem] shadow-md" 
+                                    className="w-full h-full object-cover object-center" 
                                     fetchPriority="high" 
                                 />
                             </div>
@@ -234,7 +234,9 @@ const TeamPage: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {team.map((member, index) => (
                             <div key={member.name} ref={addToRefs} className="group text-center bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 scroll-reveal" style={{ transitionDelay: `${index * 100}ms` }}>
-                                <ImageWithLoader src={member.image} alt={member.name} className="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-sm transition-transform duration-500 group-hover:scale-105" fetchPriority={index < 4 ? 'high' : 'auto'} />
+                                <div className="w-32 h-32 rounded-full mx-auto mb-4 shadow-sm overflow-hidden flex items-center justify-center">
+                                    <ImageWithLoader src={member.image} alt={member.name} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" fetchPriority={index < 4 ? 'high' : 'auto'} />
+                                </div>
                                 <h3 className="font-armstrong text-lg uppercase text-heading mb-1">{member.name}</h3>
                                 <p className="font-medium text-primary/70 text-xs uppercase tracking-wide">{member.role}</p>
                             </div>
