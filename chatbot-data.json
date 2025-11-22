@@ -1,0 +1,288 @@
+
+{
+  "start": {
+    "type": "message",
+    "botMessages": ["Olá! Sou a Ester, assistente virtual da HCE. Como posso te ajudar?"],
+    "nextNode": "main_menu"
+  },
+  "main_menu": {
+    "type": "questionWithOptions",
+    "botMessages": ["Como posso te ajudar hoje?"],
+    "options": [
+      { "text": "Solicitar Orçamento", "nextNode": "quote_service_selection", "icon": "QuoteIcon" },
+      { "text": "Recomende um Produto", "nextNode": "recommender_start", "icon": "UserTieIcon" },
+      { "text": "Dúvidas Frequentes", "nextNode": "faq_start", "icon": "QuestionIcon" },
+      { "text": "Falar com Especialista", "nextNode": "specialist_getName", "icon": "WhatsAppIcon" },
+      { "text": "Ver Projetos", "nextNode": "portfolio_redirect", "icon": "PortfolioIcon" },
+      { "text": "Suporte Técnico", "nextNode": "support_start", "icon": "CogIcon" }
+    ]
+  },
+  "recommender_start": {
+    "type": "questionWithOptions",
+    "botMessages": ["Para recomendar a melhor solução, qual é o principal objetivo do seu projeto?"],
+    "options": [
+      { "text": "Máxima luz e visão panorâmica", "nextNode": "recommender_light" },
+      { "text": "Privacidade e controle solar", "nextNode": "recommender_privacy" },
+      { "text": "Visual moderno para fachada", "nextNode": "recommender_facade" },
+      { "text": "Segurança em sacadas/escadas", "nextNode": "recommender_security" }
+    ]
+  },
+  "recommender_light": {
+    "type": "message",
+    "botMessages": ["Para máxima luminosidade e visão limpa, a **Pele de Vidro** e as **Esquadrias Fixas de grandes vãos** são ideais. Criam ambientes integrados e valorizam a vista."],
+    "nextNode": "recommender_next_step"
+  },
+  "recommender_privacy": {
+    "type": "message",
+    "botMessages": ["Para aliar privacidade e controle de luz sem perder ventilação, os **Ripados e Brises de Alumínio** são perfeitos. Adicionam design moderno e funcionalidade."],
+    "nextNode": "recommender_next_step"
+  },
+  "recommender_facade": {
+    "type": "message",
+    "botMessages": ["Para um visual imponente e contemporâneo, a **Pele de Vidro** cria uma superfície contínua e sofisticada. Combinar com **Brises** adiciona textura e controle solar."],
+    "nextNode": "recommender_next_step"
+  },
+  "recommender_security": {
+    "type": "message",
+    "botMessages": ["Segurança é fundamental. Nossos **Guarda-Corpos de Alumínio e Vidro** seguem normas ABNT, oferecendo proteção total sem comprometer estética e visão."],
+    "nextNode": "recommender_next_step"
+  },
+  "recommender_next_step": {
+    "type": "questionWithOptions",
+    "botMessages": ["Essa recomendação ajudou? O que gostaria de fazer agora?"],
+    "options": [
+      { "text": "Solicitar Orçamento", "nextNode": "quote_service_selection", "icon": "QuoteIcon" },
+      { "text": "Falar com Especialista", "nextNode": "specialist_getName", "icon": "WhatsAppIcon" },
+      { "text": "Voltar ao Menu", "nextNode": "main_menu", "icon": "ArrowLeftIcon" }
+    ]
+  },
+  "quote_service_selection": {
+    "type": "questionWithOptions",
+    "botMessages": [
+      "Perfeito! Vamos coletar algumas informações básicas para agilizar o atendimento.",
+      "Qual destes itens você tem interesse?"
+    ],
+    "options": [
+      { "text": "Janelas, Portas e Esquadrias", "nextNode": "quote_ask_details" },
+      { "text": "Fachadas e Pele de Vidro", "nextNode": "quote_ask_details" },
+      { "text": "Guarda-Corpos e Corrimãos", "nextNode": "quote_ask_details" },
+      { "text": "Ripados e Brises", "nextNode": "quote_ask_details" }
+    ],
+    "nextStateKey": "quoteService"
+  },
+  "quote_ask_details": {
+    "type": "questionWithInput",
+    "botMessages": [
+      "Certo. Você poderia descrever brevemente o que precisa?",
+      "*Exemplo:* \"Preciso de 3 janelas para os quartos e 1 porta de correr\" ou \"Gostaria de fechar minha varanda\""
+    ],
+    "nextStateKey": "quoteDetails",
+    "nextNode": "quote_ask_location"
+  },
+  "quote_ask_location": {
+    "type": "questionWithInput",
+    "botMessages": ["Em qual cidade ou bairro será a instalação?"],
+    "nextStateKey": "quoteLocation",
+    "nextNode": "quote_get_name"
+  },
+  "quote_get_name": {
+    "type": "questionWithInput",
+    "botMessages": ["Para quem devemos endereçar o orçamento? Informe seu nome completo."],
+    "nextStateKey": "userName",
+    "nextNode": "quote_get_phone"
+  },
+  "quote_get_phone": {
+    "type": "questionWithInput",
+    "botMessages": ["E qual seu telefone/WhatsApp para contato?"],
+    "nextStateKey": "userPhone",
+    "nextNode": "quote_final_summary"
+  },
+  "quote_final_summary": {
+    "type": "messageWithLink",
+    "botMessages": [
+      "Tudo pronto, {userName}! 🎉",
+      "Seu orçamento será processado e você receberá um retorno em breve. Clique abaixo para confirmar via WhatsApp."
+    ],
+    "linkText": "Enviar Solicitação por WhatsApp",
+    "icon": "WhatsAppIcon",
+    "external": true,
+    "whatsappTemplate": "📋 *Solicitação de Orçamento (via Chat)*\n\nOlá, equipe HCE!\n\nGostaria de solicitar um orçamento:\n\n🛠️ *Interesse:* {quoteService}\n📝 *Detalhes:* {quoteDetails}\n📍 *Local:* {quoteLocation}\n\n*MEUS DADOS*\n👤 *Nome:* {userName}\n📱 *Contato:* {userPhone}\n\nAguardo retorno. Obrigado!",
+    "nextNode": "completion_quote"
+  },
+  "completion_quote": {
+    "type": "message",
+    "botMessages": ["Sua solicitação foi enviada com sucesso! Nossa equipe entrará em contato em breve. 😊"],
+    "nextNode": "end"
+  },
+  "faq_start": {
+    "type": "questionWithOptions",
+    "botMessages": ["Sobre qual tópico é sua dúvida?"],
+    "options": [
+      { "text": "Linhas de Esquadrias", "nextNode": "faq_lines" },
+      { "text": "Pintura e Durabilidade", "nextNode": "faq_paint" },
+      { "text": "Isolamento Acústico", "nextNode": "faq_acoustic" },
+      { "text": "Prazo de Entrega", "nextNode": "faq_delivery" },
+      { "text": "Atendem Arquitetos?", "nextNode": "faq_architects" },
+      { "text": "Cores e Customização", "nextNode": "faq_colors" }
+    ]
+  },
+  "faq_lines": {
+    "type": "message",
+    "botMessages": ["Trabalhamos principalmente com a **Linha Inova**, extremamente versátil e robusta, ideal para projetos residenciais e comerciais de alto padrão. Permite grandes vãos e comporta vidros especiais para máximo desempenho termoacústico."],
+    "nextNode": "faq_more"
+  },
+  "faq_paint": {
+    "type": "message",
+    "botMessages": ["Nossas esquadrias recebem **pintura eletrostática a pó**, o acabamento de maior durabilidade para alumínio. Garante cobertura uniforme, não descasca, é altamente resistente a intempéries, raios UV e maresia."],
+    "nextNode": "faq_more"
+  },
+  "faq_acoustic": {
+    "type": "message",
+    "botMessages": ["Para isolamento acústico superior, nossas esquadrias comportam vidros duplos ou laminados. Essa combinação reduz significativamente ruídos externos, sendo ideal para áreas urbanas."],
+    "nextNode": "faq_more"
+  },
+  "faq_delivery": {
+    "type": "message",
+    "botMessages": ["O prazo padrão para fabricação e instalação é de **15 a 30 dias úteis**, contados a partir da aprovação final e medição em obra. Projetos com cores ou vidros especiais podem ter prazo maior, sempre informado no orçamento."],
+    "nextNode": "faq_more"
+  },
+  "faq_architects": {
+    "type": "message",
+    "botMessages": ["**Sim, com certeza!** Arquitetos e engenheiros são nossos principais parceiros. Oferecemos suporte técnico completo, desde especificação em projeto até acompanhamento em obra, garantindo execução fiel à sua visão."],
+    "nextNode": "faq_more"
+  },
+  "faq_colors": {
+    "type": "message",
+    "botMessages": ["Oferecemos uma ampla gama de cores padrão em alumínio anodizado e pintado. Também realizamos cores personalizadas sob encomenda. Consulte nosso catálogo ou fale com um especialista para mais detalhes."],
+    "nextNode": "faq_more"
+  },
+  "faq_more": {
+    "type": "questionWithOptions",
+    "botMessages": ["Esclareci sua dúvida?"],
+    "options": [
+      { "text": "Sim, obrigado!", "nextNode": "end" },
+      { "text": "Tenho outra dúvida", "nextNode": "faq_start" },
+      { "text": "Quero um orçamento", "nextNode": "quote_service_selection", "icon": "QuoteIcon" }
+    ]
+  },
+  "support_start": {
+    "type": "questionWithOptions",
+    "botMessages": ["Bem-vindo ao Suporte Técnico da HCE. Como podemos ajudar?"],
+    "options": [
+      { "text": "Solicitar Manutenção", "nextNode": "support_form" },
+      { "text": "Problema na Instalação", "nextNode": "support_form" },
+      { "text": "Dúvida Técnica", "nextNode": "support_form" },
+      { "text": "Voltar ao Menu", "nextNode": "main_menu", "icon": "ArrowLeftIcon" }
+    ],
+    "nextStateKey": "supportType"
+  },
+  "support_form": {
+    "type": "questionWithInput",
+    "botMessages": ["Por favor, descreva o problema ou necessidade técnica com a maior clareza possível."],
+    "nextStateKey": "supportDetails",
+    "nextNode": "support_ask_location"
+  },
+  "support_ask_location": {
+    "type": "questionWithInput",
+    "botMessages": ["Em qual endereço ou obra está o problema?"],
+    "nextStateKey": "supportLocation",
+    "nextNode": "support_getName"
+  },
+  "support_getName": {
+    "type": "questionWithInput",
+    "botMessages": ["Qual seu nome completo?"],
+    "nextStateKey": "userName",
+    "nextNode": "support_getPhone"
+  },
+  "support_getPhone": {
+    "type": "questionWithInput",
+    "botMessages": ["E qual seu telefone/WhatsApp?"],
+    "nextStateKey": "userPhone",
+    "nextNode": "support_whatsapp_link"
+  },
+  "support_whatsapp_link": {
+    "type": "messageWithLink",
+    "botMessages": [
+      "Obrigado, {userName}! Sua solicitação de suporte foi preparada.",
+      "Clique abaixo para enviar para nossa equipe de suporte."
+    ],
+    "linkText": "Enviar Suporte via WhatsApp",
+    "icon": "WhatsAppIcon",
+    "external": true,
+    "whatsappTemplate": "🛠️ *Solicitação de Suporte Técnico (via Site)*\n\nOlá, equipe de suporte HCE!\n\nEstou entrando em contato para solicitar assistência.\n\n*DADOS DA SOLICITAÇÃO*\n👤 *Cliente:* {userName}\n📱 *Contato:* {userPhone}\n💬 *Tipo:* {supportType}\n📍 *Endereço:* {supportLocation}\n📝 *Detalhes:*\n_{supportDetails}_\n\nAguardo o retorno. Obrigado!",
+    "nextNode": "completion_support"
+  },
+  "completion_support": {
+    "type": "message",
+    "botMessages": ["Sua solicitação de suporte foi enviada! Nossa equipe analisará e retornará em breve. 🔧"],
+    "nextNode": "end"
+  },
+  "specialist_getName": {
+    "type": "questionWithInput",
+    "botMessages": ["Para agilizar o atendimento com nosso especialista, qual seu nome?"],
+    "nextStateKey": "userName",
+    "nextNode": "specialist_getProject"
+  },
+  "specialist_getProject": {
+    "type": "questionWithInput",
+    "botMessages": ["Obrigado, {userName}! Sobre qual projeto ou assunto gostaria de conversar?"],
+    "nextStateKey": "projectInfo",
+    "nextNode": "specialist_getStage"
+  },
+  "specialist_getStage": {
+    "type": "questionWithOptions",
+    "botMessages": ["Em que fase está seu projeto?"],
+    "options": [
+      { "text": "Pesquisando ideias", "nextNode": "specialist_getPhone" },
+      { "text": "Tenho projeto de arquitetura", "nextNode": "specialist_getPhone" },
+      { "text": "Obra em andamento", "nextNode": "specialist_getPhone" }
+    ],
+    "nextStateKey": "projectStage"
+  },
+  "specialist_getPhone": {
+    "type": "questionWithInput",
+    "botMessages": ["Qual seu telefone/WhatsApp para contato?"],
+    "nextStateKey": "userPhone",
+    "nextNode": "specialist_link"
+  },
+  "specialist_link": {
+    "type": "messageWithLink",
+    "botMessages": ["Perfeito! Suas informações foram preparadas. Clique abaixo para iniciar a conversa com um especialista."],
+    "linkText": "Falar com Especialista no WhatsApp",
+    "icon": "WhatsAppIcon",
+    "external": true,
+    "whatsappTemplate": "💬 *Contato com Especialista (via Site)*\n\nOlá! Gostaria de conversar com um especialista da HCE.\n\n*MEUS DADOS*\n👤 *Nome:* {userName}\n📱 *Contato:* {userPhone}\n🏗️ *Assunto:* {projectInfo}\n📈 *Fase do Projeto:* {projectStage}\n\nAguardo o contato. Obrigado!",
+    "nextNode": "completion_specialist"
+  },
+  "completion_specialist": {
+    "type": "message",
+    "botMessages": ["Sua solicitação foi enviada! Um especialista entrará em contato em breve. 👨‍💼"],
+    "nextNode": "end"
+  },
+  "portfolio_redirect": {
+    "type": "internalRedirect",
+    "botMessages": ["Redirecionando para nosso portfólio..."],
+    "link": "/portfolio",
+    "nextNode": "post_redirect"
+  },
+  "post_redirect": {
+    "type": "questionWithOptions",
+    "botMessages": ["Você foi redirecionado. Se precisar de mais algo, estou aqui! 😊"],
+    "options": [
+      { "text": "Voltar ao Menu", "nextNode": "main_menu", "icon": "ArrowLeftIcon" }
+    ]
+  },
+  "end": {
+    "type": "questionWithOptions",
+    "botMessages": ["Posso ajudar com mais algo?"],
+    "options": [
+      { "text": "Sim, voltar ao Menu", "nextNode": "main_menu", "icon": "ArrowLeftIcon" },
+      { "text": "Não, obrigado", "nextNode": "goodbye" }
+    ]
+  },
+  "goodbye": {
+    "type": "message",
+    "botMessages": ["Obrigado por nos contatar! Até logo! 👋"],
+    "nextNode": "start"
+  }
+}

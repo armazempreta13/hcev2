@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hce-website
+    env: node
+    region: ohio
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: VITE_GEMINI_API_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production

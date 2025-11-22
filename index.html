@@ -1,0 +1,531 @@
+
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.5",
+    "react-icons/": "https://aistudiocdn.com/react-icons@^5.5.0/",
+    "react-icons": "https://aistudiocdn.com/react-icons@^5.5.0"
+  }
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HCE Esquadrias | Precisão que Transforma Ambientes</title>
+    <link rel="icon" href="https://i.imgur.com/spMimAM.png" type="image/png">
+
+    <!-- PERFORMANCE: Preconnect to critical origins -->
+    <link rel="preconnect" href="https://aistudiocdn.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://i.imgur.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- PERFORMANCE: Preload critical above-the-fold assets -->
+    <link rel="preload" fetchpriority="high" as="image" href="https://i.imgur.com/uDRif7Ql.jpeg" type="image/jpeg">
+    <link rel="preload" as="image" href="https://i.imgur.com/vSSLyD5.png" type="image/png">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@400;600;700&display=swap" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            '5xl': ['2.9rem', { lineHeight: '1.2' }],
+            '6xl': ['3.65rem', { lineHeight: '1.2' }],
+            '7xl': ['4.25rem', { lineHeight: '1.2' }],
+            '8xl': ['5.75rem', { lineHeight: '1.15' }],
+          },
+          colors: {
+            'primary': '#0f172a', // Slate 900
+            'accent': '#22d3ee', // Cyan 400
+            'accent-dark': '#06b6d4', // Cyan 500
+            'light-bg': '#f8fafc', // Slate 50
+            'soft-gray': '#f1f5f9', // Slate 100
+            'body': '#475569', // Slate 600
+            'heading': '#0f172a' // Slate 900
+          },
+          fontFamily: {
+            'armstrong': ['Oswald', 'sans-serif'],
+            'poppins': ['Poppins', 'sans-serif'],
+          },
+           borderRadius: {
+              '4xl': '2rem',
+              '5xl': '3rem',
+           },
+           animation: {
+             'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+             'chat-fade-in-up': 'chatFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+             'pulse-slow': 'pulse-slow 2.5s infinite ease-in-out',
+             'typing-dot': 'typing-dot 1.2s infinite ease-in-out',
+           },
+           keyframes: {
+             fadeInUp: {
+               '0%': { opacity: '0', transform: 'translateY(10px)' },
+               '100%': { opacity: '1', transform: 'translateY(0)' },
+             },
+             chatFadeInUp: {
+               '0%': { opacity: '0', transform: 'translateY(20px) scale(0.98)' },
+               '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+             },
+             'pulse-slow': {
+                '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(15, 23, 42, 0.3)' },
+                '50%': { transform: 'scale(1.05)', boxShadow: '0 0 0 10px rgba(15, 23, 42, 0)' }
+              },
+              'typing-dot': {
+                '0%, 80%, 100%': { transform: 'scale(0.5)', opacity: '0.5' },
+                '40%': { transform: 'scale(1)', opacity: '1' }
+              }
+           }
+        }
+      }
+    }
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        /* GLOBAL ZOOM REDUCTION: Scales the entire site down by ~15% */
+        font-size: 85%; 
+      }
+      :target {
+        scroll-margin-top: 100px;
+      }
+      body {
+        /* PERFORMANCE OPTIMIZATION: Removed expensive SVG noise texture */
+        background-color: #f1f5f9; /* soft-gray */
+        font-family: 'Poppins', sans-serif;
+      }
+
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #e2e8f0; }
+      ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #0f172a; }
+      
+      /* Custom scrollbar for Chatbot */
+      .chatbot-scrollbar::-webkit-scrollbar { width: 6px; }
+      .chatbot-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+      .chatbot-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+      .chatbot-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+
+      /* PERFORMANCE: Prevent layout shifts from images loading */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      img[width][height] {
+        aspect-ratio: attr(width) / attr(height);
+      }
+
+      /* Animação de revelação na rolagem - REVAMPED FOR PERFORMANCE */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: transform, opacity;
+      }
+      .scroll-reveal.is-revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      /* Animação de texto cinético (stagger) - REVAMPED FOR PERFORMANCE */
+      .kinetic-text-reveal > span {
+          display: inline-block;
+          overflow: hidden;
+      }
+      .kinetic-text-reveal > span > span {
+          display: inline-block;
+          transform: translateY(100%);
+          opacity: 0;
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s;
+          will-change: transform, opacity;
+      }
+      .is-revealed .kinetic-text-reveal > span > span {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Estilo minimalista para formulários - REVAMPED FOR ROBUSTNESS */
+      .minimal-input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid #cbd5e1; /* slate-300 */
+        border-radius: 0;
+        padding-top: 0.5rem; /* Label floats above, less padding needed inside */
+        padding-bottom: 0.5rem;
+        padding-left: 0;
+        padding-right: 0;
+        transition: border-color 0.4s ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%; /* Ensure inputs/textareas fill their containers */
+        color: #0f172a; /* primary / slate-900 */
+      }
+      .minimal-input:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #0f172a; /* primary */
+      }
+      
+      /* Override browser autofill styles */
+      .minimal-input:-webkit-autofill,
+      .minimal-input:-webkit-autofill:hover, 
+      .minimal-input:-webkit-autofill:focus, 
+      .minimal-input:-webkit-autofill:active {
+          -webkit-text-fill-color: #0f172a !important; /* primary color */
+          box-shadow: 0 0 0px 1000px #ffffff inset !important; /* Use the form background color */
+          transition: background-color 5000s ease-in-out 0s;
+          -webkit-appearance: none; /* remove safari border */
+          font-family: 'Poppins', sans-serif;
+          font-size: 1.125rem; /* text-lg */
+      }
+      
+      /* Estilo para opções de dropdown para alinhar com o tema */
+      .minimal-input option {
+        background: #f8fafc; /* light-bg */
+        color: #0f172a; /* primary */
+        font-family: 'Poppins', sans-serif;
+      }
+
+      /* Custom Select Dropdown - REVAMPED */
+      .select-wrapper {
+        position: relative;
+      }
+      .select-wrapper .minimal-input {
+        padding-right: 2rem; /* Make space for the icon */
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2.5' stroke='%2364748b'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+        background-size: 1.5em;
+      }
+      /* IE11 fix */
+      .select-wrapper .minimal-input::-ms-expand {
+          display: none;
+      }
+
+      /* Animated label for inputs - REVAMPED FOR ROBUSTNESS */
+      .input-group {
+          position: relative;
+          /* Add padding to the container for the floating label */
+          padding-top: 1rem;
+      }
+      .animated-label {
+          position: absolute;
+          /* Position to align with input text initially */
+          top: 1.625rem; /* Fine-tuned vertical position */
+          left: 0;
+          color: #64748b; /* slate-500 */
+          pointer-events: none;
+          transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+          font-size: 1.125rem; /* text-lg */
+          line-height: 1; /* Prevent extra vertical space */
+      }
+      
+      .minimal-input:focus + .animated-label,
+      .input-group.has-value .animated-label,
+      /* Fallback for browsers supporting :placeholder-shown. Note: doesn't work with sibling wrappers like Tooltip. */
+      .minimal-input:not(:placeholder-shown) + .animated-label {
+          top: 0; /* Move to the top padding area */
+          font-size: 0.875rem; /* text-sm */
+          color: #0f172a; /* primary */
+      }
+
+      /* Shimmer Effect for Buttons (Performance Optimized) */
+      .shimmer-effect {
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-effect::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 80%);
+        animation: shimmer 2.5s infinite;
+      }
+      @keyframes shimmer {
+        from { transform: skewX(-25deg) translateX(0); }
+        to   { transform: skewX(-25deg) translateX(100%); }
+      }
+      
+      .animate-fadeInUp {
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+      
+      /* Shimmer Effect for Image Placeholders */
+      .shimmer-placeholder {
+        background-color: #e2e8f0; /* slate-200 */
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-placeholder::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0) 80%);
+        animation: shimmer-image 1.5s infinite;
+      }
+      @keyframes shimmer-image {
+        from { transform: translateX(0); }
+        to   { transform: translateX(100%); }
+      }
+
+      /* Tooltip styles */
+      .tooltip-bubble {
+        position: absolute;
+        background-color: #0f172a; /* primary */
+        color: #f8fafc; /* light-bg */
+        padding: 0.625rem 1rem; /* py-2.5 px-4 */
+        border-radius: 0.5rem; /* rounded-lg */
+        font-size: 0.875rem; /* text-sm */
+        font-weight: 500; /* medium */
+        line-height: 1.4;
+        white-space: nowrap;
+        z-index: 100;
+        pointer-events: none;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+        /* Animation */
+        opacity: 0;
+        transition: opacity 0.1s ease-out; /* Subtle and fast fade-in */
+        will-change: opacity;
+      }
+      .tooltip-bubble.is-visible {
+          opacity: 1;
+      }
+      
+      .tooltip-arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+      }
+      
+      .tooltip-bubble[data-position="top"] .tooltip-arrow {
+        bottom: -5px; /* Half of height */
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 5px 6px 0 6px; /* h, w/2, 0, w/2 */
+        border-top-color: #0f172a; /* primary */
+      }
+
+      .tooltip-bubble[data-position="bottom"] .tooltip-arrow {
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 0 6px 5px 6px;
+        border-bottom-color: #0f172a; /* primary */
+      }
+
+      .tooltip-bubble[data-position="left"] .tooltip-arrow {
+        right: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-width: 6px 0 6px 5px;
+        border-left-color: #0f172a; /* primary */
+      }
+
+      .tooltip-bubble[data-position="right"] .tooltip-arrow {
+        left: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-width: 6px 5px 6px 0;
+        border-right-color: #0f172a; /* primary */
+      }
+      
+      /* Logo Scroller Styles */
+      .logo-scroller {
+        max-width: 100%;
+      }
+      .scroller-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem; /* space between logos */
+      }
+      .scroller-logo {
+        height: 40px; /* control logo size */
+        max-width: 150px;
+        filter: grayscale(1) brightness(1.5);
+        opacity: 0.8;
+        transition: all 0.3s ease-in-out;
+      }
+      .scroller-logo:hover {
+        filter: none;
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      /* Social Follow Alert Animations */
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slideOutLeft {
+        from {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+      }
+
+      .animate-slide-in-left {
+        animation: slideInLeft 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      .animate-slide-out-left {
+        animation: slideOutLeft 0.3s ease-out forwards;
+      }
+
+      /* Cookie Consent Banner Animations - REVAMPED */
+      @keyframes slideInUpCookie {
+        from {
+          transform: translateY(calc(100% + 1.5rem));
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes slideOutDownCookie {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(calc(100% + 1.5rem));
+          opacity: 0;
+        }
+      }
+      .animate-slide-in-up-cookie {
+        animation: slideInUpCookie 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      .animate-slide-out-down-cookie {
+        animation: slideOutDownCookie 0.5s ease-out forwards;
+      }
+      
+      /* Chatbot Dark Mode Styles */
+      .dark-chat {
+        background-color: #0f172a; /* primary */
+        border-color: #334155; /* slate-700 */
+      }
+      .dark-chat .chatbot-header, .dark-chat .chatbot-footer {
+        background-color: #1e293b; /* slate-800 */
+        border-color: #334155; /* slate-700 */
+      }
+      .dark-chat .chatbot-header-title { color: #f8fafc; /* light-bg */ }
+      .dark-chat .chatbot-header-subtitle { color: #94a3b8; /* slate-400 */ }
+      .dark-chat .chatbot-header-button { color: #94a3b8; /* slate-400 */ }
+      .dark-chat .chatbot-header-button:hover {
+        color: #f8fafc; /* light-bg */
+        background-color: #334155; /* slate-700 */
+      }
+      .dark-chat .chatbot-messages { background-color: #0f172a; /* primary */ }
+      .dark-chat .bot-bubble {
+        background-color: #334155; /* slate-700 */
+        border-color: #475569; /* slate-600 */
+      }
+      .dark-chat .bot-text { color: #e2e8f0; /* slate-200 */ }
+      .dark-chat .chat-option {
+        background-color: #334155; /* slate-700 */
+        border-color: #475569; /* slate-600 */
+      }
+      .dark-chat .chat-option:hover { border-color: #22d3ee; /* accent */ }
+      .dark-chat .chat-option-text { color: #e2e8f0; /* slate-200 */ }
+      .dark-chat .chat-option-icon { color: #94a3b8; /* slate-400 */ }
+      .dark-chat .chat-option:hover .chat-option-icon { color: #22d3ee; /* accent */ }
+      .dark-chat .user-bubble { background-color: #22d3ee; /* accent */ }
+      .dark-chat .user-text { color: #0f172a; /* primary */ }
+      .dark-chat .chatbot-input-form button {
+        background-color: #334155; /* slate-700 */
+        color: #cbd5e1; /* slate-300 */
+      }
+      .dark-chat .chatbot-input-form button:hover { background-color: #475569; /* slate-600 */ }
+      .dark-chat .chatbot-input {
+        background-color: #334155; /* slate-700 */
+        color: #f8fafc; /* light-bg */
+        border-color: transparent;
+      }
+      .dark-chat .chatbot-input::placeholder { color: #94a3b8; /* slate-400 */ }
+      .dark-chat .chatbot-input:focus {
+        background-color: #475569; /* slate-600 */
+        border-color: #22d3ee; /* accent */
+      }
+      .dark-chat .chatbot-send-button {
+        background-color: #22d3ee; /* accent */
+        color: #0f172a; /* primary */
+      }
+      .dark-chat .chatbot-send-button:hover { background-color: #06b6d4; /* accent-dark */ }
+      .dark-chat .chatbot-send-button:disabled { background-color: #475569 !important; }
+      .dark-chat .chatbot-placeholder-text { color: #64748b; /* slate-500 */ }
+
+      /* Dark scrollbar for Chatbot */
+      .dark-chat .chatbot-scrollbar::-webkit-scrollbar-track { background: #0f172a; } /* primary */
+      .dark-chat .chatbot-scrollbar::-webkit-scrollbar-thumb { background: #334155; } /* slate-700 */
+      .dark-chat .chatbot-scrollbar::-webkit-scrollbar-thumb:hover { background: #475569; } /* slate-600 */
+
+    </style>
+    
+    <!-- Google tag (gtag.js) - GA4 / Consent Mode V2 -->
+    <!-- Configurado para negar por padrão e aguardar o consentimento do usuário -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // 1. Definir estado padrão de consentimento como NEGADO para tudo (Consent Mode V2)
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'denied',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted', // Segurança é essencial
+        'wait_for_update': 500 // Aguarda 500ms pelo consentimento inicial
+      });
+    
+      gtag('js', new Date());
+    
+      // 2. Inicializar GA4 (O disparo de cookies respeitará o estado de consentimento definido acima)
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
