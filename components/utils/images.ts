@@ -167,7 +167,7 @@ export const IMAGES = {
         philippe: 'https://i.imgur.com/TNMBi27t.jpeg',
         guilherme: 'https://i.imgur.com/uGFGBTY.jpeg',
         marcelo: 'https://i.imgur.com/A7DlGJB.jpeg',
-        func6: 'https://i.imgur.com/5XZSYm1.jpeg',
+        func6: 'https://i.imgur.com/T6EiYQ9.jpeg',
         func7: 'https://i.imgur.com/vHq4Q8Ct.jpeg',
         func8: 'https://i.imgur.com/Oy9Xq2jt.jpeg',
         cta: {
