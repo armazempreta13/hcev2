@@ -59,8 +59,8 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    name: 'Funcionário 6',
-    role: 'Auxiliar de Produção',
+    name: 'Kauã Da Corte Rodrigues',
+    role: 'Instalador',
     image: IMAGES.team.func6,
     isLeadership: false,
   },
