@@ -65,8 +65,8 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    name: 'Funcionário 7',
-    role: 'Logística e Estoque',
+    name: 'Higor Paiva',
+    role: 'Instalador',
     image: IMAGES.team.func7,
     isLeadership: false,
   },
