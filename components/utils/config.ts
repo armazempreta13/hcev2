@@ -2,7 +2,7 @@
 export const CONFIG = {
     // --- Modos Globais ---
     mode: {
-        maintenance: true, // true: Bloqueia o site inteiro e mostra tela de aviso
+        maintenance: false, // true: Bloqueia o site inteiro e mostra tela de aviso
         dev: false, // Útil para logs de debug futuros
     },
 
