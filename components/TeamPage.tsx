@@ -29,15 +29,15 @@ const teamMembers = [
   },
   // Equipe
   {
-    name: 'Jose Nilton Gomes Da Costa',
-    role: 'Encarregado',
-    image: IMAGES.team.jose,
-    isLeadership: false,
-  },
-  {
     name: 'Camila Prado',
     role: 'Assistente Administrativo',
     image: IMAGES.team.camila,
+    isLeadership: false,
+  },
+  {
+    name: 'Jose Nilton Gomes Da Costa',
+    role: 'Encarregado',
+    image: IMAGES.team.jose,
     isLeadership: false,
   },
   {
