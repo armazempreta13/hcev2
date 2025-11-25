@@ -71,8 +71,8 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    name: 'Funcionário 8',
-    role: 'Administrativo',
+    name: 'Leandro Rocha de Oliveira',
+    role: 'Instalador',
     image: IMAGES.team.leandro,
     isLeadership: false,
   },
