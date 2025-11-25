@@ -169,7 +169,7 @@ export const IMAGES = {
         marcelo: 'https://i.imgur.com/A7DlGJB.jpeg',
         func6: 'https://i.imgur.com/T6EiYQ9.jpeg',
         func7: 'https://i.imgur.com/xCFvazu.jpeg',
-        func8: 'https://i.imgur.com/HxKNKwht.jpeg',
+        leandro: 'https://i.imgur.com/HxKNKwht.jpeg',
         cta: {
             background: 'https://i.imgur.com/0rQ5ev1.jpeg' // Reuso da imagem de Serviços
         }
