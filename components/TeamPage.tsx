@@ -35,9 +35,9 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    name: 'Leandro Rocha de Oliveira',
-    role: 'Instalador',
-    image: IMAGES.team.leandro,
+    name: 'Camila Prado',
+    role: 'Assistente Administrativo',
+    image: IMAGES.team.camila,
     isLeadership: false,
   },
   {
@@ -61,19 +61,19 @@ const teamMembers = [
   {
     name: 'Kauã Da Corte Rodrigues',
     role: 'Instalador',
-    image: IMAGES.team.func6,
+    image: IMAGES.team.kaua,
     isLeadership: false,
   },
   {
     name: 'Higor Paiva',
     role: 'Instalador',
-    image: IMAGES.team.func7,
+    image: IMAGES.team.higor,
     isLeadership: false,
   },
   {
     name: 'Funcionário 8',
     role: 'Administrativo',
-    image: IMAGES.team.func8,
+    image: IMAGES.team.leandro,
     isLeadership: false,
   },
 ];
