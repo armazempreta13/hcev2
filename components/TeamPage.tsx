@@ -55,7 +55,7 @@ const teamMembers = [
   {
     name: 'Marcelo da Corte',
     role: 'Instalador',
-    image: IMAGES.team.marcelo,
+    image: IMAGES.team.marcelocorte,
     isLeadership: false,
   },
   {
