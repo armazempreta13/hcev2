@@ -76,6 +76,12 @@ const teamMembers = [
     image: IMAGES.team.leandro,
     isLeadership: false,
   },
+  {
+    name: 'Marcelo Menezes',
+    role: 'Instalador',
+    image: IMAGES.team.marcelo,
+    isLeadership: false,
+  },
 ];
 
 
