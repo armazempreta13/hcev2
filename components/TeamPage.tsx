@@ -35,7 +35,7 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    name: 'Jose Nilton Gomes Da Costa',
+    name: 'Jose Nilton',
     role: 'Encarregado',
     image: IMAGES.team.jose,
     isLeadership: false,
@@ -47,7 +47,7 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    name: 'Guilherme Pereira dos Santos',
+    name: 'Guilherme dos Santos',
     role: 'Instalador',
     image: IMAGES.team.guilherme,
     isLeadership: false,
@@ -59,7 +59,7 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    name: 'Kauã Da Corte Rodrigues',
+    name: 'Kauã Da Corte',
     role: 'Instalador',
     image: IMAGES.team.kaua,
     isLeadership: false,
@@ -71,7 +71,7 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    name: 'Leandro Rocha de Oliveira',
+    name: 'Leandro Rocha',
     role: 'Instalador',
     image: IMAGES.team.leandro,
     isLeadership: false,
@@ -88,7 +88,7 @@ const teamMembers = [
 // --- Dados das Vagas ---
 const jobOpenings = [
     {
-        title: 'Ajudante Geral de Instalação',
+        title: 'Ajudante de Instalação',
         description: 'Buscamos um profissional proativo e com vontade de aprender para auxiliar nossa equipe de instaladores em obras de alto padrão. Não exige experiência prévia na área, mas vivência em obras é um diferencial.',
     }
 ];
