@@ -166,10 +166,11 @@ export const IMAGES = {
         jose: 'https://i.imgur.com/8csx4lK.jpeg',
         philippe: 'https://i.imgur.com/TNMBi27t.jpeg',
         guilherme: 'https://i.imgur.com/uGFGBTY.jpeg',
-        marcelo: 'https://i.imgur.com/A7DlGJB.jpeg',
+        marcelocorte: 'https://i.imgur.com/A7DlGJB.jpeg',
         kaua: 'https://i.imgur.com/T6EiYQ9.jpeg',
         higor: 'https://i.imgur.com/xCFvazu.jpeg',
         leandro: 'https://i.imgur.com/HxKNKwht.jpeg',
+        marcelo: 'https://i.imgur.com/5XZSYm1.jpeg,'
         cta: {
             background: 'https://i.imgur.com/0rQ5ev1.jpeg' // Reuso da imagem de Serviços
         }
