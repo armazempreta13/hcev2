@@ -163,7 +163,7 @@ export const IMAGES = {
         hercules: 'https://i.imgur.com/q8qrp0zm.png',
         cleide: 'https://i.imgur.com/vpMKntAm.png',
         camila: 'https://i.imgur.com/yaXJi1N.jpeg',
-        jose: 'https://i.imgur.com/j42e8Jt.jpeg',
+        jose: 'https://i.imgur.com/8csx4lK.jpeg',
         philippe: 'https://i.imgur.com/TNMBi27t.jpeg',
         guilherme: 'https://i.imgur.com/uGFGBTY.jpeg',
         marcelo: 'https://i.imgur.com/A7DlGJB.jpeg',
