@@ -170,7 +170,7 @@ export const IMAGES = {
         kaua: 'https://i.imgur.com/T6EiYQ9.jpeg',
         higor: 'https://i.imgur.com/xCFvazu.jpeg',
         leandro: 'https://i.imgur.com/HxKNKwht.jpeg',
-        marcelo: 'https://i.imgur.com/5XZSm1.jpeg,'
+        marcelomenezes: 'https://i.imgur.com/5XZSm1.jpeg,'
         cta: {
             background: 'https://i.imgur.com/0rQ5ev1.jpeg' // Reuso da imagem de Serviços
         }
